@@ -1,0 +1,173 @@
+:root {
+  --bg: #f8f9fa;
+  --card-bg: #ffffff;
+  --text: #1f2937;
+  --text-secondary: #6b7280;
+  --text-meta: #9ca3af;
+  --border: #e5e7eb;
+  --shadow: rgba(0, 0, 0, 0.04);
+  --shadow-hover: rgba(0, 0, 0, 0.12);
+}
+
+body[data-theme="dark"] {
+  --bg: #0f1115;
+  --card-bg: #1a1d24;
+  --text: #e5e7eb;
+  --text-secondary: #9ca3af;
+  --text-meta: #6b7280;
+  --border: #2d3139;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow-hover: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 40px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.home-card {
+  display: block;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  box-shadow: 0 2px 8px var(--shadow);
+  margin-bottom: 24px;
+  text-decoration: none;
+}
+
+.home-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px var(--shadow-hover);
+  border-color: var(--text-meta);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+h1 {
+  font-size: 32px;
+  margin: 0 0 8px 0;
+  color: var(--text);
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+.author {
+  font-size: 13px;
+  color: var(--text-meta);
+  margin: 8px 0 0 0;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.theme-toggle {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  font-size: 24px;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px var(--shadow-hover);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px var(--shadow-hover);
+  border-color: var(--text-meta);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.dev-badge {
+  background: var(--bg);
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  letter-spacing: 0.3px;
+  flex-shrink: 0;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+.desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 14px 0 16px;
+  line-height: 1.6;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+.meta {
+  font-size: 13px;
+  color: var(--text-meta);
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.domain {
+  opacity: 0.7;
+  font-size: 12px;
+}

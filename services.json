@@ -1,0 +1,35 @@
+[
+    {
+        "name": "Project Prometheus",
+        "url": "https://invest.charlie-cheng.cc",
+        "desc": "Quantitative trading strategies w/ real-time backtesting engine & portfolio optimization algorithms"
+    },
+    {
+        "name": "Project Iris",
+        "url": "https://corporation.charlie-cheng.cc",
+        "desc": "Deep dive into tech stacks, system architectures, and engineering metrics across industries"
+    },
+    {
+        "name": "Project Horus",
+        "url": "https://astronomy.charlie-cheng.cc",
+        "desc": "Data analytics platform offering insights on user behavior, market trends, and performance metrics"
+    }, 
+    {
+        "name": "Project Hephaestus",
+        "url": "https://trade.charlie-cheng.cc",
+        "desc": "Comprehensive knowledge base and documentation hub for all my projects and experiments",
+        "status": "dev"
+    },
+    {
+        "name": "Project Themis",
+        "url": "https://legal.charlie-cheng.cc",
+        "desc": "AI-powered assistant for code generation, debugging, and project management across all my endeavors",
+        "status": "dev"
+    },
+    {
+        "name": "Project Hermes",
+        "url": "https://mountain.charlie-cheng.cc",
+        "desc": "Real-time monitoring dashboard for all my services, with alerts and performance metrics",
+        "status": "dev"
+    }
+]

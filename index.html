@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Charlie’s Services</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <div>
+      <h1>Service Overview</h1>
+      <p class="subtitle">Everything I’m building, in one place.</p>
+      <p class="author">Charlie Cheng</p>
+    </div>
+    <button id="themeToggle" class="theme-toggle" title="Toggle theme">
+      <span class="icon">◐</span>
+    </button>
+  </div>
+  <a href="https://home.charlie-cheng.cc" class="home-card" target="_blank">
+    <div class="title">🏠 My Homepage</div>
+    <div class="desc">Visit my main website</div>
+    <div class="meta">
+      <span>home.charlie-cheng.cc</span>
+    </div>
+  </a>
+  <div class="grid" id="grid"></div>
+
+<script>
+async function check(url) {
+  const controller = new AbortController()
+  setTimeout(() => controller.abort(), 4000)
+
+  const start = performance.now()
+  try {
+    await fetch(url, { mode: "no-cors", signal: controller.signal })
+    return {
+      status: "UP",
+      latency: Math.round(performance.now() - start)
+    }
+  } catch {
+    return { status: "DOWN", latency: null }
+  }
+}
+
+async function init() {
+  const res = await fetch("services.json")
+  const services = await res.json()
+  const grid = document.getElementById("grid")
+
+  for (const s of services) {
+    const r = await check(s.url)
+    const domain = new URL(s.url).hostname
+
+    const card = document.createElement("div")
+    card.className = "card"
+    card.onclick = () => window.open(s.url, "_blank")
+
+    card.innerHTML = `
+      <div class="card-header">
+        <div class="title">
+          ${r.status === "UP" ? "🟢" : "🔴"}
+          ${s.name}
+        </div>
+        ${s.status === "dev" ? '<span class="dev-badge">開發中</span>' : ''}
+      </div>
+      <div class="desc">${s.desc}</div>
+      <div class="meta">
+        <span>${r.latency ? `⚡ ${r.latency}ms` : "⚠️ Unavailable!"}</span>
+        <span class="domain">${domain}</span>
+      </div>
+    `
+    grid.appendChild(card)
+  }
+}
+
+// Dark/Light mode toggle
+const toggle = document.getElementById("themeToggle")
+const theme = localStorage.getItem("theme") || "light"
+document.body.setAttribute("data-theme", theme)
+
+toggle.onclick = () => {
+  const current = document.body.getAttribute("data-theme")
+  const next = current === "light" ? "dark" : "light"
+  document.body.setAttribute("data-theme", next)
+  localStorage.setItem("theme", next)
+}
+
+init()
+</script>
+</body>
+</html>
