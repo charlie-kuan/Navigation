@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Charlie’s Services</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -70,7 +71,7 @@ async function init() {
     card.innerHTML = `
       <div class="card-header">
         <div class="title">
-          ${r.status === "UP" ? "🟢" : r.status === "DOWN" ? "🔴" : "🟡"}
+          ${r.status === "UP" ? "🟢" : "🔴"}
           ${s.name}
         </div>
         ${s.status === "dev" ? '<span class="dev-badge">開發中</span>' : ''}
@@ -81,9 +82,7 @@ async function init() {
           ${
             r.status === "UP"
               ? `⚡ ${r.latency}ms`
-              : r.status === "DOWN"
-                ? "⚠️ Unavailable!"
-                : "⚠️ 無法驗證（可能被 CORS 限制）"
+              : "⚠️ Unavailable!"
           }
         </span>
         <span class="domain">${domain}</span>
