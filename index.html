@@ -32,13 +32,19 @@ async function check(url) {
 
   const start = performance.now()
   try {
-    await fetch(url, { mode: "no-cors", signal: controller.signal })
+    const res = await fetch(url, {
+      method: "HEAD",
+      mode: "cors",
+      signal: controller.signal,
+      cache: "no-store"
+    })
+
     return {
-      status: "UP",
+      status: res.ok ? "UP" : "DOWN",
       latency: Math.round(performance.now() - start)
     }
   } catch {
-    return { status: "DOWN", latency: null }
+    return { status: "UNKNOWN", latency: null }
   }
 }
 
@@ -58,14 +64,22 @@ async function init() {
     card.innerHTML = `
       <div class="card-header">
         <div class="title">
-          ${r.status === "UP" ? "🟢" : "🔴"}
+          ${r.status === "UP" ? "🟢" : r.status === "DOWN" ? "🔴" : "🟡"}
           ${s.name}
         </div>
         ${s.status === "dev" ? '<span class="dev-badge">開發中</span>' : ''}
       </div>
       <div class="desc">${s.desc}</div>
       <div class="meta">
-        <span>${r.latency ? `⚡ ${r.latency}ms` : "⚠️ Unavailable!"}</span>
+        <span>
+          ${
+            r.status === "UP"
+              ? `⚡ ${r.latency}ms`
+              : r.status === "DOWN"
+                ? "⚠️ Unavailable!"
+                : "⚠️ 無法驗證（可能被 CORS 限制）"
+          }
+        </span>
         <span class="domain">${domain}</span>
       </div>
     `
