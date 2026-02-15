@@ -33,14 +33,20 @@ async function check(url) {
   const start = performance.now()
   try {
     const res = await fetch(url, {
-      method: "HEAD",
+      method: "GET",
       mode: "cors",
       signal: controller.signal,
       cache: "no-store"
     })
 
+    const body = (await res.text()).toLowerCase()
+    const isCloudflareTunnelError =
+      body.includes("error 1033") ||
+      body.includes("cloudflare tunnel error") ||
+      body.includes("ray id:")
+
     return {
-      status: res.ok ? "UP" : "DOWN",
+      status: res.ok && !isCloudflareTunnelError ? "UP" : "DOWN",
       latency: Math.round(performance.now() - start)
     }
   } catch {
