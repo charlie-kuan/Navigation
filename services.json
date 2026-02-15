@@ -2,34 +2,34 @@
     {
         "name": "Project Prometheus",
         "url": "https://invest.charlie-cheng.cc",
-        "desc": "Quantitative trading strategies w/ real-time backtesting engine & portfolio optimization algorithms"
+        "desc": "股票市場及總體經濟研究平台，提供深入的分析研究，幫助投資者做出明智的決策"
     },
     {
         "name": "Project Iris",
         "url": "https://corporation.charlie-cheng.cc",
-        "desc": "Deep dive into tech stacks, system architectures, and engineering metrics across industries"
+        "desc": "深入分析公司之間的控制及投資關係，揭示企業結構的平台"
     },
     {
         "name": "Project Horus",
         "url": "https://astronomy.charlie-cheng.cc",
-        "desc": "Data analytics platform offering insights on user behavior, market trends, and performance metrics"
+        "desc": "天文觀測計畫的規劃工具，提供觀測條件、天氣預報及觀測建議"
     }, 
     {
         "name": "Project Hephaestus",
         "url": "https://trade.charlie-cheng.cc",
-        "desc": "Comprehensive knowledge base and documentation hub for all my projects and experiments",
+        "desc": "自動化交易策略的開發及實時交易平台，幫助交易者研究及使用策略",
         "status": "dev"
     },
     {
         "name": "Project Themis",
         "url": "https://legal.charlie-cheng.cc",
-        "desc": "AI-powered assistant for code generation, debugging, and project management across all my endeavors",
+        "desc": "提供法律文件撰寫工具",
         "status": "dev"
     },
     {
         "name": "Project Hermes",
         "url": "https://mountain.charlie-cheng.cc",
-        "desc": "Real-time monitoring dashboard for all my services, with alerts and performance metrics",
+        "desc": "一站式登山計畫平台，提供路線規劃、裝備建議等",
         "status": "dev"
     }
 ]
