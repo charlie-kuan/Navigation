@@ -41,10 +41,7 @@ async function check(url) {
     })
 
     const body = (await res.text()).toLowerCase()
-    const isCloudflareTunnelError =
-      body.includes("error 1033") ||
-      body.includes("cloudflare tunnel error")
-
+    const isCloudflareTunnelError = body.includes("error 1033") 
     return {
       status: res.ok && !isCloudflareTunnelError ? "UP" : "DOWN",
       latency: Math.round(performance.now() - start)
