@@ -25,6 +25,8 @@
     </div>
   </a>
   <div class="grid" id="grid"></div>
+  <div class="section-title" id="tools-title" style="display:none">Tools</div>
+  <div class="grid" id="tools-grid"></div>
 
 <script>
 async function check(url) {
@@ -49,40 +51,51 @@ async function check(url) {
   }
 }
 
+function buildCard(s, r) {
+  const domain = new URL(s.url).hostname
+  const card = document.createElement("div")
+  card.className = "card"
+  card.onclick = () => window.open(s.url, "_blank")
+  card.innerHTML = `
+    <div class="card-header">
+      <div class="title">
+        ${r.status === "UP" ? "🟢" : "🔴"}
+        ${s.name}
+      </div>
+      ${s.status === "dev" ? '<span class="dev-badge">開發中</span>' : ''}
+    </div>
+    <div class="desc">${s.desc}</div>
+    <div class="meta">
+      <span>
+        ${r.status === "UP" ? `⚡ ${r.latency}ms` : "⚠️ Unavailable!"}
+      </span>
+      <span class="domain">${domain}</span>
+    </div>
+  `
+  return card
+}
+
 async function init() {
   const res = await fetch("services.json")
   const services = await res.json()
   const grid = document.getElementById("grid")
+  const toolsGrid = document.getElementById("tools-grid")
+  const toolsTitle = document.getElementById("tools-title")
 
-  for (const s of services) {
+  const tools = services.filter(s => s.type === "tool")
+  const projects = services.filter(s => s.type !== "tool")
+
+  for (const s of projects) {
     const r = await check(s.url)
-    const domain = new URL(s.url).hostname
+    grid.appendChild(buildCard(s, r))
+  }
 
-    const card = document.createElement("div")
-    card.className = "card"
-    card.onclick = () => window.open(s.url, "_blank")
-
-    card.innerHTML = `
-      <div class="card-header">
-        <div class="title">
-          ${r.status === "UP" ? "🟢" : "🔴"}
-          ${s.name}
-        </div>
-        ${s.status === "dev" ? '<span class="dev-badge">開發中</span>' : ''}
-      </div>
-      <div class="desc">${s.desc}</div>
-      <div class="meta">
-        <span>
-          ${
-            r.status === "UP"
-              ? `⚡ ${r.latency}ms`
-              : "⚠️ Unavailable!"
-          }
-        </span>
-        <span class="domain">${domain}</span>
-      </div>
-    `
-    grid.appendChild(card)
+  if (tools.length > 0) {
+    toolsTitle.style.display = ""
+    for (const s of tools) {
+      const r = await check(s.url)
+      toolsGrid.appendChild(buildCard(s, r))
+    }
   }
 }
 

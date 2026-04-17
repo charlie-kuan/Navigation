@@ -104,6 +104,16 @@ h1 {
   gap: 24px;
 }
 
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-meta);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  margin: 40px 0 16px;
+}
+
 .card {
   background: var(--card-bg);
   border: 1px solid var(--border);

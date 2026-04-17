@@ -15,6 +15,11 @@
         "desc": "天文觀測計畫的規劃工具，提供觀測條件、天氣預報及觀測建議"
     }, 
     {
+        "name": "Project Zeus",
+        "url": "https://watch.charlie-cheng.cc",
+        "desc": "台灣全方位的資料平台，整合多元資料來源提供深入分析"
+    },
+    {
         "name": "Project Hephaestus",
         "url": "https://trade.charlie-cheng.cc",
         "desc": "自動化交易策略開發及實時交易平台，幫助交易者研究及部署策略",
@@ -31,5 +36,17 @@
         "url": "https://mountain.charlie-cheng.cc",
         "desc": "一站式登山計畫規劃平台，提供路線規劃及GPX檔案、裝備及行程建議等",
         "status": "dev"
+    },
+    {
+        "name": "Online Notebook",
+        "url": "https://note.charlie-cheng.cc",
+        "desc": "線上筆記工具",
+        "type": "tool"
+    },
+    {
+        "name": "PDF 處理器",
+        "url": "https://pdf.charlie-cheng.cc",
+        "desc": "PDF 檔案處理工具",
+        "type": "tool"
     }
 ]
