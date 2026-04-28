@@ -79,7 +79,8 @@ function buildCard(s, r) {
 
 function buildLocalCard(s) {
   const card = document.createElement("div")
-  card.className = "card local-card"
+  card.className = "card" + (s.url ? "" : " local-card")
+  if (s.url) card.onclick = () => window.open(s.url, "_blank")
   card.innerHTML = `
     <div class="card-header">
       <div class="title">🛠️ ${s.name}</div>
@@ -87,6 +88,7 @@ function buildLocalCard(s) {
     <div class="desc">${s.desc}</div>
     <div class="meta">
       <span class="local-badge">Local</span>
+      ${s.url ? `<span class="domain">${new URL(s.url).hostname}</span>` : ""}
     </div>
   `
   return card

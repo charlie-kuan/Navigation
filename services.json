@@ -51,6 +51,7 @@
     },
     {
         "name": "Project Metis",
+        "url": "https://github.com/charlie-kuan/Metis",
         "desc": "將圖片或書籍內容轉換為 Obsidian 筆記的工具",
         "type": "local"
     }
