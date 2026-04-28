@@ -27,6 +27,8 @@
   <div class="grid" id="grid"></div>
   <div class="section-title" id="tools-title" style="display:none">Tools</div>
   <div class="grid" id="tools-grid"></div>
+  <div class="section-title" id="local-title" style="display:none">Local Tools</div>
+  <div class="grid" id="local-grid"></div>
 
 <script>
 async function check(url) {
@@ -75,15 +77,33 @@ function buildCard(s, r) {
   return card
 }
 
+function buildLocalCard(s) {
+  const card = document.createElement("div")
+  card.className = "card local-card"
+  card.innerHTML = `
+    <div class="card-header">
+      <div class="title">🛠️ ${s.name}</div>
+    </div>
+    <div class="desc">${s.desc}</div>
+    <div class="meta">
+      <span class="local-badge">Local</span>
+    </div>
+  `
+  return card
+}
+
 async function init() {
   const res = await fetch("services.json")
   const services = await res.json()
   const grid = document.getElementById("grid")
   const toolsGrid = document.getElementById("tools-grid")
   const toolsTitle = document.getElementById("tools-title")
+  const localGrid = document.getElementById("local-grid")
+  const localTitle = document.getElementById("local-title")
 
   const tools = services.filter(s => s.type === "tool")
-  const projects = services.filter(s => s.type !== "tool")
+  const locals = services.filter(s => s.type === "local")
+  const projects = services.filter(s => s.type !== "tool" && s.type !== "local")
 
   for (const s of projects) {
     const r = await check(s.url)
@@ -95,6 +115,13 @@ async function init() {
     for (const s of tools) {
       const r = await check(s.url)
       toolsGrid.appendChild(buildCard(s, r))
+    }
+  }
+
+  if (locals.length > 0) {
+    localTitle.style.display = ""
+    for (const s of locals) {
+      localGrid.appendChild(buildLocalCard(s))
     }
   }
 }

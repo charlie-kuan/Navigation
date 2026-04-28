@@ -182,6 +182,27 @@ h1 {
   font-size: 12px;
 }
 
+.local-card {
+  cursor: default;
+}
+
+.local-card:hover {
+  transform: none;
+  box-shadow: 0 2px 8px var(--shadow);
+  border-color: var(--border);
+}
+
+.local-badge {
+  background: var(--bg);
+  color: var(--text-meta);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  letter-spacing: 0.3px;
+}
+
 @media (max-width: 768px) {
   body {
     padding: 20px;

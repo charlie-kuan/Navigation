@@ -48,5 +48,10 @@
         "url": "https://pdf.charlie-cheng.cc",
         "desc": "PDF 檔案處理工具",
         "type": "tool"
+    },
+    {
+        "name": "Project Metis",
+        "desc": "將圖片或書籍內容轉換為 Obsidian 筆記的工具",
+        "type": "local"
     }
 ]
