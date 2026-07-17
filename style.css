@@ -56,7 +56,7 @@ body {
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 36px;
   margin: 0 0 8px 0;
   color: var(--text);
   font-weight: 600;
@@ -64,14 +64,14 @@ h1 {
 }
 
 .subtitle {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-secondary);
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont;
 }
 
 .author {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-meta);
   margin: 8px 0 0 0;
   font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
@@ -105,7 +105,7 @@ h1 {
 }
 
 .section-title {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--text-meta);
   text-transform: uppercase;
@@ -140,7 +140,7 @@ h1 {
 .dev-badge {
   background: var(--bg);
   color: var(--text-secondary);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   padding: 4px 10px;
   border-radius: 6px;
@@ -154,13 +154,13 @@ h1 {
   align-items: center;
   gap: 10px;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 20px;
   color: var(--text);
   font-family: system-ui, -apple-system, BlinkMacSystemFont;
 }
 
 .desc {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-secondary);
   margin: 14px 0 16px;
   line-height: 1.6;
@@ -168,7 +168,7 @@ h1 {
 }
 
 .meta {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-meta);
   font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
   font-weight: 500;
@@ -179,7 +179,7 @@ h1 {
 
 .domain {
   opacity: 0.7;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .local-card {
@@ -195,7 +195,7 @@ h1 {
 .local-badge {
   background: var(--bg);
   color: var(--text-meta);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   padding: 4px 10px;
   border-radius: 6px;

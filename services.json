@@ -20,6 +20,16 @@
         "desc": "台灣即時資訊地圖儀表板，整合氣象衛星雲圖、雷達回波、空氣品質，以及能源、水情、交通、災害等開放資料圖層"
     },
     {
+        "name": "Project Hermes",
+        "url": "https://mountain.charlie-cheng.cc",
+        "desc": "台灣百岳行程規劃平台，在互動地圖上選點規劃路線，依體能水平與背包重量估算行程，提供 GPX 檔案及裝備建議"
+    },
+    {
+        "name": "Project Pythia",
+        "url": "https://futures.charlie-cheng.cc",
+        "desc": "台指期貨即時行情儀表板，提供 Shioaji 即時報價、各月合約行情、期現基差與跨期價差走勢及結算日行事曆"
+    },
+    {
         "name": "Project Hephaestus",
         "url": "https://trade.charlie-cheng.cc",
         "desc": "自動化交易策略開發及實時交易平台，幫助交易者研究及部署策略",
@@ -30,17 +40,6 @@
         "url": "https://legal.charlie-cheng.cc",
         "desc": "提供法律文件撰寫工具",
         "status": "dev"
-    },
-    {
-        "name": "Project Hermes",
-        "url": "https://mountain.charlie-cheng.cc",
-        "desc": "台灣百岳行程規劃平台，在互動地圖上選點規劃路線，依體能水平與背包重量估算行程，提供 GPX 檔案及裝備建議",
-        "status": "dev"
-    },
-    {
-        "name": "Project Pythia",
-        "url": "https://futures.charlie-cheng.cc",
-        "desc": "台指期貨即時行情儀表板，提供 Shioaji 即時報價、各月合約行情、期現基差與跨期價差走勢及結算日行事曆"
     },
     {
         "name": "Online Notebook",
